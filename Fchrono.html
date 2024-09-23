@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title> Forlorn Stars, le jeu </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+
+body{
+  background-image: url("https://i.imgur.com/wFrJQz2.png");
+  background-color : RGBa(255, 255,255, 0.2);
+}
+
+h1 {
+		color:#fff;
+		font-family : Zen Dots,Kozuka Gothic Pro L,fantasy;
+		font-size : 50px;
+		text-align: left;
+		padding-left: 30px;
+		padding-top: 20px;
+		}
+	
+		h2 {
+		color: #fff;
+		font-family : Turret Road,Kozuka Gothic Pro L;
+		font-size: 30px;
+		text-align: left;
+		padding-left: 30px;
+		}
+		
+		h3 {
+		color: #fff;
+		font-family : Turret Road,Kozuka Gothic Pro L;
+		font-size: 20px;
+		}
+		
+		.topnav {
+  overflow: hidden;
+  background-color: #242424;
+  font-family : Turret Road,Kozuka Gothic Pro L;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.split {
+  float: right;
+  background-color: #d19656;
+  color: white;
+}
+		
+		
+		.center {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 80px;
+  padding-left: 30px;
+  padding-top: 20px;
+  }
+  .topnav a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	}
+	
+	/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.button {
+  font-family : Turret Road,Kozuka Gothic Pro L;
+  border-radius: 4px;
+  background-color: #d19656;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/* TIMELINE
+			–––––––––––––––––––––––––––––––––––––––––––––––––– */
+			.timeline2 {
+				overflow-y: scroll;
+				overflow-x: hidden;
+				height: 550px;
+				top: calc(100%-600px);
+				position: relative;
+				scroll-behavior:  smooth ;
+				 
+			}
+			.timeline2   *, .timeline2   *::before, .timeline2   *::after { 
+				font: normal 16px/1.5 "Turret Road", sans-serif;
+				color: #fff;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.timeline2::-webkit-scrollbar {
+				width: 12px;
+				background-color: #8d6240;
+			}
+			 
+			.timeline2::-webkit-scrollbar-track {
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+				border-radius: 10px;
+				background-color: #8d6240;
+			}
+			 
+			.timeline2::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+				background-color: #555;
+			}
+			 
+			.timeline2 ul {
+			  /* padding: 50px 0; */
+			}
+
+			.timeline2 ul li {
+			  list-style-type: none;
+			  position: relative;
+			      width: 2px;/* width: 6px; */
+			  margin: 0 auto;
+				padding-top: 10px;/* 50px; */
+				padding-bottom: 10px;/* padding-bottom: 20px; = center padding-bottom: 10px; = center */
+			 background: #fff; /* background: black;  */
+			  
+				border-left: 3px double white;
+				
+			}
+
+			 
+			.timeline2 ul li::after {
+			  content: '';
+			  position: absolute;
+			  left: 50%;
+			  top: 30px; /* bottom: 0;  bottom: 50%;=center top: 30px;=top  */ 
+			  transform: translateX(-55%);/* transform: translateX(-50%); */
+			  -webkit-transform: translateX(-55%);
+			  width: 30px;
+			  height: 30px;
+			  border-radius: 50%;
+			  background: inherit;
+			  border: 2px solid #8d6240;
+			}
+
+			.timeline2 ul li div {
+			  position: relative;
+			  bottom: 0;
+			  width: 400px;
+			  padding: 15px;
+			  background: #8d6240;
+			  
+			}
+
+			.timeline2 ul li div::before {
+			  content: '';
+			  position: absolute;
+			  top: 20px; /* bottom: 7px; bottom: 50%;=center top: 20px;=top */
+			  
+			  width: 0;
+			  height: 0;
+			  border-style: solid;
+			}
+
+			.timeline2 ul li:nth-child(odd) div {
+			  left: 45px;
+			}
+
+			.timeline2 ul li:nth-child(odd) div::before {
+			  left: -15px;
+				border-width: 16px 16px 16px 0;/* border-width: 8px 16px 8px 0; */
+			  border-color: transparent #8d6240 transparent transparent;
+			}
+
+			.timeline2 ul li:nth-child(even) div {
+			  left: -439px;
+			}
+
+			.timeline2 ul li:nth-child(even) div::before {
+			  right: -15px;
+			  	border-width: 16px 0 16px 16px; /* border-width: 8px 0 8px 16px; */
+			  border-color: transparent transparent transparent #8d6240;
+			}
+			
+			
+			.timeline2 ul li:nth-child(odd) .time {
+				position: absolute;
+				top: 20px;
+				left: -100px;
+				width: 90px;
+			}
+			.timeline2 ul li:nth-child(even) .time {
+				position: absolute;
+				top: 20px;
+				right: -120px;
+				width: 90px;
+			}
+			
+			
+			.timeline2 time {
+			  display: block;
+			  font-size: 1.2rem;
+			  font-weight: bold;
+			  margin-bottom: 8px;
+			}
+
+
+			/* EFFECTS
+			–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+			.timeline2 ul li::after {
+				transition: background .5s ease-in-out;
+				-webkit-transition: background .5s ease-in-out;
+			}
+
+			.timeline2 ul li.in-view::after {
+			  background: #8d6240;
+			  border: 2px solid white;
+			}
+
+			.timeline2 ul li div {
+			  visibility: hidden;
+			  opacity: 0;
+				transition: all .5s ease-in-out;
+				-webkit-transition: all .5s ease-in-out;
+			}
+
+			.timeline2 ul li:nth-child(odd) div {
+				transform: translate3d(200px, 0, 0);
+				-webkit-transform: translate(200px, 0, 0);
+			}
+
+			.timeline2 ul li:nth-child(even) div {
+				transform: translate3d(-200px, 0, 0);
+				-webkit-transform: translate(-200px, 0, 0);
+			}
+
+			.timeline2 ul li.in-view div {
+				transform: none;
+				-webkit-transform: none;
+			  visibility: visible;
+			  opacity: 1;
+			  /* disabled when arrow is on top position
+			  border-radius: 10px;
+			  */
+			}
+			
+			.timeline2 ul li  .time {
+				transition: all .5s ease-in-out;
+				-webkit-transition: all .5s ease-in-out;
+				transform: rotate(-90deg);
+				-webkit-transform:rotate(270deg);
+			}
+			.timeline2 ul li.in-view  .time {
+				transform: rotate(0deg);
+				-webkit-transform:rotate(0deg);
+			}
+
+			/* GENERAL MEDIA QUERIES
+			–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+			@media screen and (max-width: 900px) {
+			  .timeline2 ul li div {
+				width: 250px;
+			  }
+			  .timeline2 ul li:nth-child(even) div {
+				left: -289px;
+				/*250+45-6*/
+			  }
+			}
+
+			@media screen and (max-width: 600px) {
+			  .timeline2 ul li {
+				margin-left: 20px;
+			  }
+			  .timeline2 ul li div {
+				width: calc(100vw - 120px);
+			  }
+			  .timeline2 ul li:nth-child(even) div {
+				left: 45px;
+			  }
+			  .timeline2 ul li:nth-child(even) div::before {
+				left: -15px;
+				border-width: 16px 16px 16px 0; /* border-width: 8px 16px 8px 0;  */
+				border-color: transparent #03A9F4 transparent transparent;
+			  }
+			  
+				
+				.timeline2 ul li:nth-child(odd) .time {
+					position: absolute;
+					top: 60px;
+					left: -23px;
+					width: 90px;
+					/*
+					transform: rotate(-90deg);
+					-webkit-transform:rotate(270deg);
+					*/
+					transform: rotate(0deg);
+					-webkit-transform:rotate(0deg);
+				}
+				.timeline2 ul li:nth-child(even) .time {
+					position: absolute;
+					top: 60px;
+					right: -67px;
+					width: 90px;
+					/*
+					transform: rotate(-90deg);
+					-webkit-transform:rotate(270deg);
+					*/
+					transform: rotate(0deg);
+					-webkit-transform:rotate(0deg);
+				}
+				.timeline2 ul li.in-view:nth-child(odd) .time {
+					transform: rotate(-90deg);
+					-webkit-transform:rotate(270deg);					 
+				}
+				.timeline2 ul li.in-view:nth-child(even) .time {
+					transform: rotate(-90deg);
+					-webkit-transform:rotate(270deg);
+				}
+			  
+			}
+
+
+
+
+</style>
+<body>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <div class="dropdown">
+    <a href="FLore.html">Lore</a>
+    <div class="dropdown-content">
+      <a href='FLore.html'>Vaisseaux</a>
+      <a href="FFactions.html">Factions</a>
+      <a href="FWiki.html">Wiki</a>
+    </div>
+  </div>
+  <a href="FTeam.html">Notre équipe</a>
+  <a class="split" href="FDownload.html">Download</a>
+  <a href="Fchrono.html">Chronologie</a>
+</div>
+  <h1> CHRONOLOGIE DU PROJET </h1>
+  <h2>Voici la chronologie détaillée de tout ce qui a été réalisé sur le projet Forlorn Stars jusqu'à maintenant</h2>
+  
+  <div class="timeline2">
+		  <ul>
+			<li>
+			  <div>
+				<time>2022</time> Formation du groupe sur l'initiative de Thomas, discutions autour du projet et décision de créer un RTS de science-fiction avec un lore fourni et de nombreuses batailles
+			  </div>
+				<span class="time">
+					<span>OCT, 27<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2022</time> Premières réunions du groupe pour rédiger le cahier des charges, répartition des taches en fonction des envies et compétences de chacun
+			  </div>
+				<span class="time">
+					<span>NOV, 24<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2022</time> Début de la série de réunions "lore" entre Léïa et Brendan, qui permettront la création de l'arbre des scénarios et des fins multiples
+			  </div>
+				<span class="time">
+					<span>DEC, 13<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2022</time> Début de la création des modèles Blender des vaisseaux par Mayline et de la Skybox par Brendan
+			  </div>
+				<span class="time">
+					<span>DEC, 15<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2023</time> Réunions pour décider des statistiques des vaisseaux et de la carte dynamique, par Thomas, Brendan et parfois Léïa
+			  </div>
+				<span class="time">
+					<span>JAN, 13<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2023</time> Réalisation du site internet en entier à l'exception de la page de chronologie du travail, par Léïa
+			  </div>
+				<span class="time">
+					<span>JAN, 14<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2023</time> Début de la réalisation de l'achitecture du GitHub et début du code du projet Unity, avec les fonctions qui permettent le déplacement des vaisseaux dans la Skybox par Brendan et Thomas
+			  </div>
+				<span class="time">
+					<span>JAN, 30<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2023</time> Ecriture de l'histoire des factions et définition de leurs caractéristiques ainsi que début de graphe des personnages principaux par Léïa et Brendan
+			  </div>
+				<span class="time">
+					<span>FEV, 5<sup>th</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2023</time> Réalisation des menus principaux et secondaires par Léïa ( Design du logo et de l'intégralité des boutons sous Photoshop CS5 ) et Thomas (code et disposition unity)
+			  </div>
+				<span class="time">
+					<span> MAR, 3<sup>rd</sup></span>
+				</span>
+			</li>
+			<li>
+			  <div>
+				<time>2023</time> Réunions sur les patterns de l'IA et sur les décisions stratégiques qu'elle pourra prendre
+			  </div>
+				<span class="time">
+					<span>AVR, 5<sup>th</sup></span>
+				</span>
+			</li>
+		  </ul>
+		</div>
+		<script src='JsChrono.js'></script>
+	</html>
+  
+
+
+</body>
+</html>

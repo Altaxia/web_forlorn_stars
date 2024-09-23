@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title> Forlorn Stars, le jeu </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="icon.png">
+</head>
+
+<style>
+
+body{
+  background-image: url("https://i.imgur.com/wFrJQz2.png");
+  background-color : RGBa(255, 255,255, 0.2);
+}
+
+h1 {
+		color:#fff;
+		font-family : Zen Dots,Kozuka Gothic Pro L,fantasy;
+		font-size : 50px;
+		text-align: left;
+		padding-left: 30px;
+		padding-top: 20px;
+		}
+	
+		h2 {
+		color: #fff;
+		font-family : Turret Road,Kozuka Gothic Pro L;
+		font-size: 30px;
+		text-align: left;
+		padding-left: 30px;
+		}
+		
+		h3 {
+		color: #fff;
+		font-family : Turret Road,Kozuka Gothic Pro L;
+		font-size: 20px;
+		text-align: left;
+		padding-left: 150px;
+		padding-top: 20px;
+		}
+		
+		.topnav {
+  overflow: hidden;
+  background-color: #242424;
+  font-family : Turret Road,Kozuka Gothic Pro L;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.split {
+  float: right;
+  background-color: #d19656;
+  color: white;
+}
+		
+		
+		.center {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 80px;
+  padding-left: 30px;
+  padding-top: 20px;
+  }
+  .topnav a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	}
+	
+	/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.button {
+  font-family : Turret Road,Kozuka Gothic Pro L;
+  border-radius: 4px;
+  background-color: #d19656;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Zen Dots",Verdana, sans-serif;
+        margin: 0;
+      }
+      .mySlides {
+        display: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+      /* Boutons next & previous */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      /* Position de "next button" à la droite */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      /* En survol, ajoutez la couleur noire de l'arrière-plan avec un peu see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      /* Caption */
+      .text {
+        color: #ffffff;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+		font-family: "Turret Road";
+      }
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #ffffff;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+		font-family:"Zen Dots";
+      }
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #999999;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .active,
+      .dot:hover {
+        background-color: #111111;
+      }
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+	  
+	  
+	figure {
+	font-family:"Zen Dots";
+	color:#FFFFFF;
+	font-size: 18px;
+	margin:100px;
+	}
+	
+	figcaption{
+	font-family:"Turret Road";
+	font-size:15px;
+	}
+
+
+</style>
+<body>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <div class="dropdown">
+    <a href="FLore.html">Lore</a>
+    <div class="dropdown-content">
+      <a href='FLore.html'>Vaisseaux</a>
+      <a href="FFactions.html">Factions</a>
+      <a href="FWiki.html">Wiki</a>
+    </div>
+  </div>
+  <a href="FTeam.html">Notre équipe</a>
+  <a href="Fchrono.html">Chronologie</a>
+  <a class="split" href="FDownload.html">Download</a>
+</div>
+  <h1> LA FACTION DES AZETI </h1>
+  <h2>Les Azeti sont une faction composée entièrement d'etres en silice, qui ont besoin d'un soleil pour esperer survivre. Voudrez vous les priver de tout espoir ou les aider ?</h2>
+  
+  <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="StarHome.jpg" style="width: 100%;" />
+        <div class="text">Le système azeti</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="StarHome.jpg" style="width: 100%;" />
+        <div class="text">Les vaisseaux azetis</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="StarHome.jpg" style="width: 100%;" />
+        <div class="text">L'amiral des azetis</div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+    <div style="text-align: center;">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  
+   <h3> Les azetis sont des etres pacifistes, qui ne cherchent qu'à survivre. Leur but est de trouver un refuge avec un soleil plutot que de conquérir la galaxie.</h3>
+   <h3> Les azetis n'ont pas foncièrement de technologie, ils se servent d'ailleurs de leurs propres corps en tant que vaisseaux.</h3>
+   <h3> Ces etres sont loyaux et pacifistes dans l'ame, ils sont un peuple soudé. Il est à noter que les Azeti ne se reproduisent pas, ils se créent entre eux à partir des mines de silice présentes dans leur système </h3>
+   <figure>
+   <hr style="height: 2px; color: #FFFFFF; background-color: #FFFFFF; width: 50%; border: none";>
+    <blockquote>
+        <p>" - Mais qu'est-ce que tu fous, Fredo ? Rapporte pas ces merdes ici, tu vas endommager mon précieux et magnifique système !</p>
+		
+		<p>- C'est pour de l'étude. Ces débris pourraient nous etre très utiles à la compréhension de leur système. Ces etres sont fascinants.</p>
+		
+		<p>- L'autre robot a raison pour une fois, ça me tue de le dire mais écoutes là."</p>
+    </blockquote>
+    <figcaption> SINTIA, l'IA du vaisseau amiral, Fred le responsable scientifique et Marc, le vice-amiral</figcaption>
+	<hr style="height: 2px; color: #FFFFFF; background-color: #FFFFFF; width: 50%; border: none";>
+</figure>
+   <h3> Si vous décidez d'aider les Azetis, peut-etre vont ils vous le rendre au centuple.. ou peut-etre vaut-il mieux se contenter de les massacrer. Qui sait ?</h3>
+   <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+</body>
+</html>
