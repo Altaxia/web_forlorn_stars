@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title> Forlorn Stars, le jeu </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="icon.png">
+</head>
+
+<style>
+
+body{
+  background-image: url("https://i.imgur.com/wFrJQz2.png");
+  background-color : RGBa(255, 255,255, 0.2);
+}
+
+h1 {
+		color:#fff;
+		font-family : Zen Dots,Kozuka Gothic Pro L,fantasy;
+		font-size : 50px;
+		text-align: left;
+		padding-left: 30px;
+		padding-top: 20px;
+		}
+	
+		h2 {
+		color: #fff;
+		font-family : Turret Road,Kozuka Gothic Pro L;
+		font-size: 30px;
+		text-align: left;
+		padding-left: 30px;
+		}
+		
+		h3 {
+		color: #fff;
+		font-family : Turret Road,Kozuka Gothic Pro L;
+		font-size: 20px;
+		}
+		
+		.topnav {
+  overflow: hidden;
+  background-color: #242424;
+  font-family : Turret Road,Kozuka Gothic Pro L;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.split {
+  float: right;
+  background-color: #d19656;
+  color: white;
+}
+		
+		
+		.center {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 80px;
+  padding-left: 30px;
+  padding-top: 20px;
+  }
+  .topnav a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	}
+	
+	/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width:70%;
+}
+
+.row{
+	padding-left: 30px;
+	}
+	
+.container {
+  padding: 0 16px;
+  background-color: #fff;
+  font-family : Turret Road,Kozuka Gothic Pro L;
+  
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.name {
+	padding-top: 10px;
+	color:black;
+	}
+	
+.button {
+  font-family : Turret Road,Kozuka Gothic Pro L;
+  border-radius: 4px;
+  background-color: #d19656;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 290px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+</style>
+<body>
+<div class="topnav">
+  <a class="active" href="Forlorn.html">Home</a>
+  <div class="dropdown">
+    <a href="FLore.html">Lore</a>
+    <div class="dropdown-content">
+      <a href='FLore.html'>Vaisseaux</a>
+      <a href="FFactions.html">Factions</a>
+      <a href="FWiki.html">Wiki</a>
+    </div>
+  </div>
+  <a href="FTeam.html">Notre équipe</a>
+  <a href="Fchrono.html">Chronologie</a>
+  <a class="split" href="FDownload.html">Download</a>
+</div>
+  <h1> VOICI L'EQUIPE DU JEU</h1>
+  <h2>Sur cette page, vous saurez tout sur les membres du projet Forlorn Stars</h2>
+  
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="Brendan.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2 class="name">Brendan Martin</h2>
+        <p class="title">Epitéen</p>
+        <p>Narration, Gameplay, Architecture</p>
+        <p>brendan.martin@epita.fr</p>
+        <p><button class="button"><span>Contact</span></button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="Mayline.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2 class="name">Mayline Haas</h2>
+        <p class="title">Epitéenne</p>
+        <p>Affichage, Architecture</p>
+        <p>mayline.haas@epita.fr</p>
+        <p><button class="button"><span>Contact</span></button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="Leia.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2 class="name">Léïa Percherancier</h2>
+        <p class="title">Epitéenne</p>
+        <p>Narration, Affichage, Communication, Son</p>
+        <p>leia.percherancier@epita.fr</p>
+        <p><button class="button" onclick= "window.location.href='https://www.instagram.com/slush_bleuet/';"><span>Ses créations</span></button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="chantier.png" alt="John" style="width:100%">
+      <div class="container">
+        <h2 class="name">Thomas Courrege</h2>
+        <p class="title">Epitéen</p>
+        <p>Gameplay, Architecture, Affichage</p>
+        <p>thomas.courrege@epita.fr</p>
+        <p><button class="button"><span>Contact</span></button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="chantier.png" alt="John" style="width:100%">
+      <div class="container">
+        <h2 class="name">Stanislas Bara</h2>
+        <p class="title">Concept Artist</p>
+        <p>Affichage, Communication</p>
+        <p><button class="button"><span>Contact</span></button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="chantier.png" alt="John" style="width:100%">
+      <div class="container">
+        <h2 class="name">Angelo Grandjeat-Roubennes</h2>
+        <p class="title">Music composer</p>
+        <p>Son</p>
+        <p><button class="button" onclick="window.location.href='https://linktr.ee/elfamosoangelo';"><span>Ses réalisations</span></button></p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+</div>
+</body>
+</html>
